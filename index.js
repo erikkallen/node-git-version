@@ -33,10 +33,10 @@
 		sha = sha[0].slice(0, -6);
 	}
 
-	var tag = stdout.match(/tag\:\s[a-zA-Z0-9\-\.]+\,?/g);
-	if (tag && tag.length > 0)
+	var tag = stdout.match(/tag\:\s([a-zA-Z0-9\-\.]+)\,?/);
+	if (tag && tag[1] && tag[1].length > 0)
 	{
-		tag = tag[0].slice(5, -1);
+		tag = tag[1];
 	}
 
 	// Compose version file info
